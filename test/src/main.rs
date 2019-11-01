@@ -53,6 +53,31 @@ fn main() {
             current_group_id == file_group_id
         }
 
+        ("-e", Some(filename_match)) => {
+            let c_str = filename_match.value_of("filename").unwrap();
+            (unsafe { libc::access(c_str.as_ptr() as *const i8, 0) } == 0)
+        }
+        ("-s", Some(filename_match)) => {
+            let c_str = filename_match.value_of("filename").unwrap();
+            let filesize = metadata(c_str).unwrap().len();
+            (unsafe { libc::access(c_str.as_ptr() as *const i8, 0) } == 0) && filesize > 0
+        }
+        /*
+        ("-nt", Some(filename_match)) => {
+        }
+        ("-ot", Some(filename_match)) => {
+        }
+        ("-ef", Some(filename_match)) => {
+        }
+        */
+        ("-N", Some(filename_match)) => {
+            let metadata = metadata(filename_match.value_of("filename").unwrap()).unwrap();
+            let mtime = metadata.modified().unwrap();
+            let atime = metadata.accessed().unwrap();
+            mtime > atime
+        }
+
+
         _ => process::exit(1),
     };
 
