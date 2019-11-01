@@ -110,3 +110,23 @@ subcommands:
             - filename:
                 help: Name of file
                 index: 1
+
+
+    - -e:
+        about: True if file exists.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -s:
+        about: True if file exists and has a size greater than zero.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -N:
+        about: True if file exists and has been modified (mtime) since it was last read (atime).
+        args:
+            - filename:
+                help: Name of file
+                index: 1
