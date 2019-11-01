@@ -1,0 +1,13 @@
+[package]
+name = "test"
+version = "0.1.0"
+authors = ["halfbro <mlagare22@gmail.com>"]
+build = "build.rs"
+edition = "2018"
+
+[dependencies]
+clap = { version = "^2.33.0", features = ["yaml", "wrap_help"] }
+libc = "0.2.65"
+
+[build-dependencies]
+clap = { version = "^2.33.0", features = ["yaml"] }
