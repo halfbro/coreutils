@@ -60,3 +60,53 @@ subcommands:
             - filename:
                 help: Name of file
                 index: 1
+
+
+    - -g:
+        about: True if file exists and has its set-group-ID bit set.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -k:
+        about: True if file exists and has its sticky bit set.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -r:
+        about: True if file exists and read permission is granted.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -u:
+        about: True if file exists and has its set-user-ID bit set.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -w:
+        about: True if file exists and write permission is granted.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -x:
+        about: True if file exists and execute permission is granted (or search permission, if it is a directory).
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -O:
+        about: True if file exists and is owned by the current effective user ID.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -G:
+        about: True if file exists and is owned by the current effective group ID.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
