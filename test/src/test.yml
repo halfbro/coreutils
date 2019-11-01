@@ -1,0 +1,62 @@
+name: test
+version: "0.1.0"
+author: halfbro <mlagare22@gmail.com>
+about: |
+    test returns a status of 0 (true) or 1 (false) depending on the evaluation of the conditional expression expr.
+    Each part of the expression must be a separate argument.
+
+subcommands:
+    - -b:
+        about: True if file exists and is a block special device.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -c:
+        about: True if file exists and is a character special device.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -d:
+        about: True if file exists and is a directory
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -f:
+        about: True if file exists and is a regular file
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -h:
+        about: True if file exists and is a symoblic link. Unlike all other file-related test, this test does not dereference file if it is a sumbolic link.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -L:
+        about: True if file exists and is a symoblic link. Unlike all other file-related test, this test does not dereference file if it is a sumbolic link.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -p:
+        about: True if file exists and is a named pipe.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -S:
+        about: True if file exists and is a socket.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
+    - -t:
+        about: True if fd is a file descriptor that is associated with a terminal.
+        args:
+            - filename:
+                help: Name of file
+                index: 1
